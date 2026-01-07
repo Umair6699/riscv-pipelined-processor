@@ -76,6 +76,25 @@ Instruction sequences are loaded using `.mem` files.
 
 ---
 
+## Presentation Slides
+
+A detailed project presentation is included in the `docs/` directory.
+
+The presentation covers:
+- RISC-V pipeline architecture
+- RV32I instruction flow
+- M-extension (MUL, DIV, REM) implementation
+- Multi-cycle division design decision
+- Hazard detection and forwarding
+- Simulation results from tb_top testbench
+
+File:
+- `docs/RISC_V_Pipelined_Processor_Presentation.pptx`
+
+This presentation was used to explain the design and verification during academic evaluation.
+
+---
+
 ## Simulation Results
 
 - Simulation performed using **Vivado XSIM**
@@ -86,11 +105,54 @@ Instruction sequences are loaded using `.mem` files.
   - Pipeline stalls during multi-cycle DIV/REM
   - Correct final register values
 
+---
+
 ### Evidence
 - Waveform screenshot: `simulation/timing1.jpeg`
 - Waveform screenshot: `simulation/timing2.jpeg`
 
 ---
 
-## Project Structure
+## Tools Used
+
+- SystemVerilog
+- Vivado Design Suite
+- Xilinx XSIM (Simulation)
+
+---
+
+## How to Run Simulation
+
+1. Open the project in **Vivado**.
+2. Add all RTL files from the `rtl/` directory.
+3. Add memory initialization files from the `memory/` directory.
+4. Add testbench files from the `testbench/` directory.
+5. Set `tb_top.sv` as the simulation top module.
+6. Run **Behavioral Simulation** using XSIM.
+7. Verify waveform outputs or check `reg_out.mem` for results.
+
+---
+
+## Design Highlights
+
+- Clean separation of pipeline stages
+- Explicit hazard detection and forwarding logic
+- Realistic handling of multi-cycle division
+- Maintainable and modular RTL design
+- Architecture-focused implementation suitable for FPGA or ASIC studies
+
+---
+
+## Author
+
+**Muhammad Umair Ajmal**  
+Electrical Engineering Student  
+Interests: Digital Design, Computer Architecture, FPGA, AI Hardware
+
+---
+
+## License
+
+This project is open-source and intended for educational and research purposes.
+
 
